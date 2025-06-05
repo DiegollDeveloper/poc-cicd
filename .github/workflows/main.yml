@@ -13,3 +13,10 @@ jobs:
           token: ${{ secrets.PERSONAL_ACCESS_TOKEN_1 }}
           repository: DiegollDeveloper/test-poc
           event-type: trigger-remote-workflow
+
+      - name: Trigger workflow in another repository 2
+        uses: peter-evans/repository-dispatch@v3
+        with:
+          token: ${{ secrets.PERSONAL_ACCESS_TOKEN_1 }}
+          repository: DiegollDeveloper/test-poc-2
+          event-type: trigger-remote-workflow
