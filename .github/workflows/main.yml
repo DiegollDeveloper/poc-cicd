@@ -1,0 +1,15 @@
+name: Trigger Remote Workflows
+
+on:
+  workflow_dispatch:
+
+jobs:
+  trigger-remote-workflows:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger workflow in another repository
+        uses: peter-evans/repository-dispatch@v3
+        with:
+          token: ${{ secrets.PERSONAL_ACCESS_TOKEN_1 }}
+          repository: DiegollDeveloper/test-poc
+          event-type: trigger-remote-workflow
